@@ -55,5 +55,6 @@ Start here:
 - [WHY.md](WHY.md)
 - [ROADMAP.md](ROADMAP.md)
 - [docs/architecture/system-overview.md](docs/architecture/system-overview.md)
+- [docs/architecture/repository-structure.md](docs/architecture/repository-structure.md)
 - [foundation/first-principles.md](foundation/first-principles.md)
 - [knowledge/schema/tennis-knowledge-schema.yaml](knowledge/schema/tennis-knowledge-schema.yaml)
