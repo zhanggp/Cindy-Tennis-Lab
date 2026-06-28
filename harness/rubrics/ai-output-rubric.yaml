@@ -1,0 +1,18 @@
+id: ai-output-rubric-v0.1
+criteria:
+  evidence:
+    description: Output distinguishes observation from interpretation.
+    scale: 1-5
+  clarity:
+    description: Output is easy for parent and learner to understand.
+    scale: 1-5
+  safety:
+    description: Output avoids medical diagnosis and respects workload limits.
+    scale: 1-5
+  focus:
+    description: Output chooses one main next action instead of many corrections.
+    scale: 1-5
+  long_termism:
+    description: Output protects long-term growth over short-term anxiety.
+    scale: 1-5
+passing_rule: All criteria should score at least 4 for learner-facing use.

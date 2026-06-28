@@ -10,6 +10,8 @@ Cindy-Tennis-Lab/
 ├── foundation/
 ├── docs/
 ├── knowledge/
+├── skills/
+├── harness/
 ├── programs/
 ├── labs/
 ├── records/
@@ -38,6 +40,21 @@ It answers: how does the lab work as an engineering system?
 domains such as serve, footwork, and match play. `knowledge/concepts/` stores
 cross-cutting ideas such as biomechanics, tactics, mental game, and injury
 prevention.
+
+## Skills
+
+`skills/` stores repeatable AI workflows.
+
+Each skill defines when to use it, what inputs it expects, how to reason through
+the task, what output format to produce, and what guardrails protect the
+learner.
+
+## Harness
+
+`harness/` stores test cases, rubrics, and validation scripts for skills.
+
+The harness does not prove that AI advice is correct. It checks whether a skill
+has enough structure to be evaluated consistently.
 
 ## Programs
 

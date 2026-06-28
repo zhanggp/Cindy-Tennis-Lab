@@ -1,0 +1,21 @@
+id: serve-video-review-001
+skill: serve-video-review
+title: Cindy monthly side-view serve clip
+input: |
+  Learner: Cindy
+  Age: 9
+  Angle: side
+  Focus: toss and trophy position
+  Evidence: toss is mostly above the hitting shoulder; left arm drops early on several serves; landing is balanced.
+expected_sections:
+  - Summary
+  - Evidence
+  - Scores
+  - One Main Focus
+  - Home Drill
+  - Parent Note
+quality_bar:
+  - cites visible evidence
+  - chooses one main correction
+  - avoids chasing speed
+  - asks for missing angle if needed

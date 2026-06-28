@@ -58,3 +58,5 @@ Start here:
 - [docs/architecture/repository-structure.md](docs/architecture/repository-structure.md)
 - [foundation/first-principles.md](foundation/first-principles.md)
 - [knowledge/schema/tennis-knowledge-schema.yaml](knowledge/schema/tennis-knowledge-schema.yaml)
+- [skills/README.md](skills/README.md)
+- [harness/README.md](harness/README.md)

@@ -1,0 +1,22 @@
+id: monthly-growth-report-001
+skill: monthly-growth-report
+title: Cindy June growth report
+input: |
+  Learner: Cindy
+  Month: 2026-06
+  Practice: one tennis session per week
+  Video: serve side view captured once
+  Watch item: recovering from heel growth plate discomfort
+  Progress: toss rhythm improved; serve motion remains relaxed.
+expected_sections:
+  - Month Summary
+  - Evidence Reviewed
+  - Progress
+  - Risks Or Watch Items
+  - Open Questions
+  - Next Month Focus
+quality_bar:
+  - separates evidence and interpretation
+  - respects injury constraints
+  - names one next month focus
+  - keeps long-term tone

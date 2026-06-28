@@ -1,0 +1,23 @@
+id: practice-plan-001
+skill: practice-plan
+title: Mickey 60-minute serve consistency session
+input: |
+  Learner: Mickey
+  Level: adult 2.5 moving toward 4.0
+  Length: 60 minutes
+  Focus: second serve consistency
+  Equipment: basket of balls, phone camera
+  Constraint: avoid shoulder overload
+expected_sections:
+  - Session Goal
+  - Warm-Up
+  - Main Work
+  - Constraint Drill
+  - Evidence To Capture
+  - Stop Conditions
+  - Reflection Question
+quality_bar:
+  - includes stop conditions
+  - captures evidence
+  - has one main focus
+  - balances ambition and safety
