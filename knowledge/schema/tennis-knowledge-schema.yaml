@@ -1,0 +1,128 @@
+schema:
+  name: tennis-knowledge-schema
+  version: 0.1.0
+  purpose: >
+    Structure tennis learning knowledge so observations, evidence, principles,
+    hypotheses, and next actions can be connected over time.
+
+principles:
+  - id: understanding_before_imitation
+    name: Understanding Before Imitation
+    statement_en: Understanding is more important than imitation.
+    statement_zh: 理解，比模仿更重要。
+  - id: evidence_driven
+    name: Evidence Driven
+  - id: engineering_thinking
+    name: Engineering Thinking
+  - id: continuous_iteration
+    name: Continuous Iteration
+  - id: long_termism
+    name: Long-termism
+  - id: ai_as_amplifier
+    name: AI as Amplifier
+    statements:
+      - AI does not replace learning. AI amplifies learning.
+      - AI does not replace parents. AI amplifies companionship.
+      - Build with AI. Grow together.
+      - AI时代，一起探索，积极前行。
+
+learners:
+  - id: mickey
+    name: Mickey
+    profile: Adult tennis learner
+    goal: 2.5 to 4.0
+  - id: cindy
+    name: Cindy
+    profile: Junior tennis learner
+    goal: NCAA pathway
+
+knowledge_item:
+  required_fields:
+    - id
+    - title
+    - learner_id
+    - category
+    - observation
+    - evidence
+    - hypothesis
+    - next_action
+  fields:
+    id:
+      type: string
+      description: Stable unique identifier.
+    title:
+      type: string
+      description: Short human-readable title.
+    learner_id:
+      type: string
+      allowed_values:
+        - mickey
+        - cindy
+        - shared
+    category:
+      type: string
+      allowed_values:
+        - technique
+        - tactics
+        - footwork
+        - serve
+        - return
+        - rally
+        - match_play
+        - physical
+        - mental
+        - learning_habit
+        - parent_companionship
+        - ai_workflow
+    observation:
+      type: string
+      description: What was seen, felt, heard, or recorded.
+    evidence:
+      type: object
+      properties:
+        source:
+          type: string
+          allowed_values:
+            - video
+            - match_note
+            - practice_note
+            - coach_feedback
+            - statistic
+            - journal
+            - other
+        reference:
+          type: string
+          description: File path, link, timestamp, or note reference.
+        confidence:
+          type: string
+          allowed_values:
+            - low
+            - medium
+            - high
+    principle_links:
+      type: array
+      items:
+        type: string
+      description: Principle ids connected to this item.
+    hypothesis:
+      type: string
+      description: Current explanation to test.
+    next_action:
+      type: string
+      description: Small experiment or practice focus.
+    review:
+      type: object
+      properties:
+        status:
+          type: string
+          allowed_values:
+            - proposed
+            - testing
+            - validated
+            - revised
+            - retired
+        result:
+          type: string
+        next_review_date:
+          type: string
+          format: date
