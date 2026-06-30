@@ -11,6 +11,8 @@
 - Created the empty Serve skill directory skeleton.
 - Created local GitHub issue and project drafts because integration write access
   is currently blocked.
+- Added Source Registry v0.1 so sources can become claims before becoming
+  knowledge.
 
 ### Biggest Learning
 
@@ -19,4 +21,5 @@ become the source of truth instead of chat history.
 
 ### Next Step
 
-Review Tennis Knowledge Graph v0.1, then design Serve Ontology v0.1.
+Review Tennis Knowledge Graph v0.1 and Source Registry v0.1, then design Serve
+Ontology v0.1.

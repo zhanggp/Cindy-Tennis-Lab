@@ -1,0 +1,48 @@
+claims:
+  - claim_id: claim_consistency_as_core_skill
+    statement: Consistency is a core tennis performance skill.
+    source_id: skills_of_a_tennis_athlete
+    source_tier: T3
+    domain: Motor Learning
+    skill: rally
+    evidence_type: coaching_framework
+    confidence: medium
+    validation_needed: true
+    applicable_age: all
+    related_nodes:
+      - Motor Learning
+      - Skill
+      - Metrics
+    notes: Private framework claim. Validate through training and match data.
+
+  - claim_id: claim_one_hypothesis_one_metric
+    statement: A learning experiment should test one hypothesis with one primary metric.
+    source_id: engineering_principles
+    source_tier: T0
+    domain: Experiment
+    skill:
+    evidence_type: internal_engineering_rule
+    confidence: high
+    validation_needed: false
+    applicable_age: all
+    related_nodes:
+      - Experiment
+      - Metrics
+      - Knowledge
+    notes: Operating rule for Cindy Tennis Lab experiments.
+
+  - claim_id: claim_own_data_highest_value
+    statement: Mickey and Cindy's own training data is the highest-value evidence source for this project.
+    source_id: project_charter_v1
+    source_tier: T0
+    domain: Knowledge
+    skill:
+    evidence_type: internal_strategy_decision
+    confidence: high
+    validation_needed: false
+    applicable_age: all
+    related_nodes:
+      - Knowledge
+      - Experiment
+      - Metrics
+    notes: Own data is unique, but still requires careful interpretation.

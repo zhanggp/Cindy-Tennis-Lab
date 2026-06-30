@@ -1,0 +1,272 @@
+registry:
+  version: 0.1.0
+  status: draft
+  date: 2026-06-30
+  policy:
+    public_repo_stores:
+      - metadata
+      - notes
+      - claims
+      - schemas
+      - allowed_links
+    public_repo_does_not_store:
+      - full_copyrighted_books
+      - paid_ebooks
+      - private_pdfs
+      - raw_video_libraries
+      - private_medical_records
+
+sources:
+  - source_id: skills_of_a_tennis_athlete
+    title: The Skills of a Tennis Athlete
+    creator: Blue Guy / source owner to verify
+    source_type: ebook
+    tier: T3
+    access: private
+    copyright_policy:
+      store_raw: false
+      public_quote_limit: short_excerpt_only
+      commit_full_text: false
+    url:
+    date_accessed:
+    language: en
+    topics:
+      - skill
+      - drill
+      - motor_learning
+    related_nodes:
+      - Skill
+      - Drill
+      - Motor Learning
+    reliability:
+      evidence_level: coaching_framework
+      confidence: medium
+      validation_needed: true
+    notes_path: private/notes/skills-of-a-tennis-athlete.md
+    claims_path: knowledge/claims/motor-learning.yaml
+
+  - source_id: usta_coaching
+    title: USTA Coaching
+    creator: USTA
+    source_type: official
+    tier: T2
+    access: public
+    copyright_policy:
+      store_raw: false
+      public_quote_limit: short_excerpt_only
+      commit_full_text: false
+    url:
+    date_accessed: 2026-06-30
+    language: en
+    topics:
+      - coaching_standard
+      - safeguarding
+      - coach_development
+    related_nodes:
+      - Knowledge
+      - Skill
+      - Experiment
+    reliability:
+      evidence_level: official_standard
+      confidence: high
+      validation_needed: false
+    notes_path: research/official/usta-coaching.md
+    claims_path: knowledge/claims/coaching-standards.yaml
+
+  - source_id: world_tennis_itf
+    title: World Tennis / ITF Coaching And Development Resources
+    creator: World Tennis / ITF
+    source_type: official
+    tier: T2
+    access: public
+    copyright_policy:
+      store_raw: false
+      public_quote_limit: short_excerpt_only
+      commit_full_text: false
+    url:
+    date_accessed: 2026-06-30
+    language: en
+    topics:
+      - coaching_standard
+      - junior_development
+      - participation
+    related_nodes:
+      - Knowledge
+      - Skill
+      - Experiment
+    reliability:
+      evidence_level: official_standard
+      confidence: high
+      validation_needed: false
+    notes_path: research/official/world-tennis-itf.md
+    claims_path: knowledge/claims/coaching-standards.yaml
+
+  - source_id: tennis_stroke_biomechanics_mediapipe_pose
+    title: Multi-Task Tennis Stroke Biomechanics Analysis Using MediaPipe Pose
+    creator: Authors to verify from paper
+    source_type: paper
+    tier: T1
+    access: public
+    copyright_policy:
+      store_raw: false
+      public_quote_limit: short_excerpt_only
+      commit_full_text: false
+    url: https://arxiv.org/abs/2606.15992
+    date_accessed: 2026-06-30
+    language: en
+    topics:
+      - biomechanics
+      - video_analysis
+      - pose_estimation
+    related_nodes:
+      - Physics
+      - Biomechanics
+      - Metrics
+    reliability:
+      evidence_level: scientific_preprint
+      confidence: medium
+      validation_needed: true
+    notes_path: research/papers/tennis-stroke-biomechanics-mediapipe-pose.md
+    claims_path: knowledge/claims/serve.yaml
+
+  - source_id: tennisexpert_video_understanding
+    title: "TennisExpert: Towards Expert-Level Analytical Sports Video Understanding"
+    creator: Authors to verify from paper
+    source_type: paper
+    tier: T1
+    access: public
+    copyright_policy:
+      store_raw: false
+      public_quote_limit: short_excerpt_only
+      commit_full_text: false
+    url: https://arxiv.org/abs/2603.13397
+    date_accessed: 2026-06-30
+    language: en
+    topics:
+      - video_analysis
+      - tactical_reasoning
+      - rally_understanding
+    related_nodes:
+      - Metrics
+      - Experiment
+      - Skill
+    reliability:
+      evidence_level: scientific_preprint
+      confidence: medium
+      validation_needed: true
+    notes_path: research/video-analysis/tennisexpert-video-understanding.md
+    claims_path: knowledge/claims/video-analysis.yaml
+
+  - source_id: zhang_zhizhen_serve_case
+    title: Zhang Zhizhen Serve Case
+    creator: Cindy Tennis Lab
+    source_type: video
+    tier: T4
+    access: public
+    copyright_policy:
+      store_raw: false
+      public_quote_limit: short_excerpt_only
+      commit_full_text: false
+    url:
+    date_accessed:
+    language: mixed
+    topics:
+      - serve
+      - professional_case
+      - chinese_player
+    related_nodes:
+      - Skill
+      - Biomechanics
+      - Metrics
+    reliability:
+      evidence_level: professional_case
+      confidence: medium
+      validation_needed: true
+    notes_path: research/coaching-frameworks/zhang-zhizhen-serve-case.md
+    claims_path: knowledge/claims/serve.yaml
+
+  - source_id: djokovic_serve_case
+    title: Djokovic Serve Case
+    creator: Cindy Tennis Lab
+    source_type: video
+    tier: T4
+    access: public
+    copyright_policy:
+      store_raw: false
+      public_quote_limit: short_excerpt_only
+      commit_full_text: false
+    url:
+    date_accessed:
+    language: mixed
+    topics:
+      - serve
+      - professional_case
+      - efficiency
+    related_nodes:
+      - Skill
+      - Biomechanics
+      - Metrics
+    reliability:
+      evidence_level: professional_case
+      confidence: medium
+      validation_needed: true
+    notes_path: research/coaching-frameworks/djokovic-serve-case.md
+    claims_path: knowledge/claims/serve.yaml
+
+  - source_id: mickey_training_data
+    title: Mickey Training Data
+    creator: Mickey / Cindy Tennis Lab
+    source_type: personal_data
+    tier: T0
+    access: private
+    copyright_policy:
+      store_raw: false
+      public_quote_limit: no_public_quote
+      commit_full_text: false
+    url:
+    date_accessed:
+    language: mixed
+    topics:
+      - adult_learning
+      - practice
+      - match_play
+    related_nodes:
+      - Experiment
+      - Metrics
+      - Motor Learning
+    reliability:
+      evidence_level: own_data
+      confidence: high
+      validation_needed: false
+    notes_path: records/mickey/README.md
+    claims_path: knowledge/claims/adult-learning.yaml
+
+  - source_id: cindy_training_data
+    title: Cindy Training Data
+    creator: Cindy / Cindy Tennis Lab
+    source_type: personal_data
+    tier: T0
+    access: private
+    copyright_policy:
+      store_raw: false
+      public_quote_limit: no_public_quote
+      commit_full_text: false
+    url:
+    date_accessed:
+    language: mixed
+    topics:
+      - junior_development
+      - practice
+      - match_play
+      - health
+    related_nodes:
+      - Experiment
+      - Metrics
+      - Skill
+      - Anatomy
+    reliability:
+      evidence_level: own_data
+      confidence: high
+      validation_needed: false
+    notes_path: records/cindy/README.md
+    claims_path: knowledge/claims/serve.yaml

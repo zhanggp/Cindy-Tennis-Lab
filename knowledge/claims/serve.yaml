@@ -1,0 +1,49 @@
+claims:
+  - claim_id: claim_serve_efficiency_over_speed
+    statement: Serve quality should be evaluated by efficiency and repeatability, not only speed.
+    source_id: skills_of_a_tennis_athlete
+    source_tier: T3
+    domain: Skill
+    skill: serve
+    evidence_type: coaching_framework
+    confidence: medium
+    validation_needed: true
+    applicable_age: all
+    related_nodes:
+      - Skill
+      - Metrics
+      - Experiment
+    notes: Private framework claim. Do not treat as scientific evidence until validated.
+
+  - claim_id: claim_serve_is_skill_not_top_level_domain
+    statement: Serve should be modeled as a Skill node rather than a top-level knowledge graph domain.
+    source_id: rfc_0001_tennis_knowledge_graph
+    source_tier: T0
+    domain: Skill
+    skill: serve
+    evidence_type: internal_architecture_decision
+    confidence: high
+    validation_needed: false
+    applicable_age: all
+    related_nodes:
+      - Knowledge
+      - Skill
+      - Drill
+      - Metrics
+    notes: Internal graph modeling decision from RFC-0001.
+
+  - claim_id: claim_pose_metrics_can_support_serve_review
+    statement: Pose-based movement metrics may support future serve review, but need validation against coaching judgment and own video data.
+    source_id: tennis_stroke_biomechanics_mediapipe_pose
+    source_tier: T1
+    domain: Biomechanics
+    skill: serve
+    evidence_type: scientific_preprint
+    confidence: medium
+    validation_needed: true
+    applicable_age: youth_and_adult
+    related_nodes:
+      - Biomechanics
+      - Metrics
+      - Experiment
+    notes: Treat as research direction, not production-ready analysis.

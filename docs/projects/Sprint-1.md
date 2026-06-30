@@ -15,10 +15,14 @@ integration permissions.
 | Issue | Title | Initial Column |
 | --- | --- | --- |
 | #1 | Knowledge Graph | Done |
-| #2 | Serve Ontology | Backlog |
+| #2 | Source Registry | Done |
 | #3 | Experiment Schema | Backlog |
 | #4 | Video Annotation | Backlog |
 | #5 | Adult Learning | Backlog |
+
+## Next Candidate
+
+Serve Ontology remains the next domain-specific issue after Source Registry.
 
 ## Permission Note
 

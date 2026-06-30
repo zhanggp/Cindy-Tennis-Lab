@@ -1,0 +1,28 @@
+private_sources:
+  - source_id: private_example_ebook
+    title: Example Private Ebook
+    creator: Example Creator
+    source_type: ebook
+    tier: T3
+    access: purchased
+    copyright_policy:
+      store_raw: false
+      public_quote_limit: short_excerpt_only
+      commit_full_text: false
+    url:
+    date_accessed:
+    language: en
+    topics:
+      - skill
+      - drill
+      - motor_learning
+    related_nodes:
+      - Skill
+      - Drill
+      - Motor Learning
+    reliability:
+      evidence_level: coaching_practice
+      confidence: medium
+      validation_needed: true
+    notes_path: private/notes/example-private-ebook.md
+    claims_path: knowledge/claims/example.yaml
