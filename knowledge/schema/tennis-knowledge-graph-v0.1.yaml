@@ -1,0 +1,173 @@
+schema:
+  name: tennis-knowledge-graph
+  version: 0.1.0
+  status: draft
+  date: 2026-06-30
+  purpose: >
+    Define the first top-level node model for Cindy Tennis Lab's tennis
+    knowledge graph.
+
+principles:
+  - knowledge_first
+  - data_first
+  - evidence_first
+  - version_everything
+  - long_term_thinking
+
+scope:
+  included_nodes:
+    - Knowledge
+    - Physics
+    - Biomechanics
+    - Anatomy
+    - Motor Learning
+    - Skill
+    - Drill
+    - Metrics
+    - Experiment
+  excluded:
+    - Agents
+    - RAG
+    - vector databases
+    - video recognition
+    - UI
+    - public content workflows
+
+node_types:
+  Knowledge:
+    description: Reusable idea, model, or principle that survived review.
+    inputs:
+      - evidence
+      - observations
+      - assessments
+      - experiments
+    outputs:
+      - principles
+      - models
+      - decisions
+    relationships:
+      - connects_all_nodes
+      - promoted_from_experiment
+      - supported_by_evidence
+
+  Physics:
+    description: Ball, force, spin, trajectory, timing, and energy.
+    inputs:
+      - video
+      - measurements
+      - external_references
+    outputs:
+      - physical_constraints
+      - ball_flight_model
+    relationships:
+      - informs_skill
+      - informs_metrics
+
+  Biomechanics:
+    description: Body movement, sequencing, balance, and kinetic chain.
+    inputs:
+      - video
+      - anatomy
+      - coaching_notes
+    outputs:
+      - movement_model
+      - technical_constraints
+    relationships:
+      - informed_by_anatomy
+      - informs_skill
+      - informs_drill
+
+  Anatomy:
+    description: Body structures, growth, health constraints, and injury risks.
+    inputs:
+      - health_notes
+      - rehab_notes
+      - anatomy_references
+    outputs:
+      - safety_constraints
+      - load_constraints
+    relationships:
+      - informs_biomechanics
+      - informs_experiment
+
+  Motor Learning:
+    description: How skill changes through practice, feedback, retention, and transfer.
+    inputs:
+      - practice_notes
+      - feedback
+      - retention_data
+      - transfer_data
+    outputs:
+      - learning_rules
+      - practice_design_constraints
+    relationships:
+      - informs_drill
+      - informs_experiment
+
+  Skill:
+    description: A tennis capability such as serve, return, forehand, or footwork.
+    inputs:
+      - knowledge
+      - biomechanics
+      - motor_learning
+      - metrics
+    outputs:
+      - skill_model
+      - practice_focus
+    relationships:
+      - uses_drill
+      - evaluated_by_metrics
+      - tested_by_experiment
+
+  Drill:
+    description: A designed practice task with constraints and review signals.
+    inputs:
+      - skill_focus
+      - constraints
+      - metrics
+    outputs:
+      - practice_protocol
+      - evidence_to_capture
+    relationships:
+      - tests_skill
+      - produces_evidence
+      - evaluated_by_metrics
+
+  Metrics:
+    description: Measurements used to review skill, drill, health, and transfer.
+    inputs:
+      - evidence
+      - counts
+      - scores
+      - observations
+    outputs:
+      - assessment
+      - trend
+      - review_signal
+    relationships:
+      - evaluates_skill
+      - evaluates_drill
+      - evaluates_experiment
+
+  Experiment:
+    description: Time-boxed test of a learning hypothesis.
+    inputs:
+      - question
+      - hypothesis
+      - intervention
+      - primary_metric
+      - evidence_plan
+    outputs:
+      - review_decision
+      - revised_hypothesis
+      - promoted_knowledge
+    relationships:
+      - tests_hypothesis
+      - uses_metrics
+      - may_promote_knowledge
+
+rules:
+  - Serve is a Skill node, not a top-level node.
+  - Claims should link back to evidence when evidence exists.
+  - Experiments should test one hypothesis with one primary metric.
+  - Knowledge is promoted only after review.

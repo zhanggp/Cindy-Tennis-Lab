@@ -51,10 +51,13 @@ Cindy Tennis Lab.
 Start here:
 
 - [PROJECT-CHARTER.md](PROJECT-CHARTER.md)
+- [ENGINEERING.md](ENGINEERING.md)
 - [VISION.md](VISION.md)
 - [MANIFESTO.md](MANIFESTO.md)
 - [WHY.md](WHY.md)
 - [ROADMAP.md](ROADMAP.md)
+- [docs/rfc/RFC-0000-Engineering-Principles.md](docs/rfc/RFC-0000-Engineering-Principles.md)
+- [docs/rfc/RFC-0001-Tennis-Knowledge-Graph.md](docs/rfc/RFC-0001-Tennis-Knowledge-Graph.md)
 - [docs/architecture/system-overview.md](docs/architecture/system-overview.md)
 - [docs/architecture/repository-structure.md](docs/architecture/repository-structure.md)
 - [foundation/first-principles.md](foundation/first-principles.md)
