@@ -1,0 +1,113 @@
+schema:
+  name: serve-metrics
+  version: 0.1.0
+  status: draft
+  date: 2026-06-30
+
+principle: >
+  Serve metrics guide attention. They do not judge the learner.
+
+score_scales:
+  phase_score:
+    range: 0-100
+    meaning: Review quality for one observable serve phase.
+  count_0_20:
+    range: 0-20
+    meaning: Count out of 20 attempts.
+  pain_0_10:
+    range: 0-10
+    meaning: Self-reported pain or discomfort.
+
+metrics:
+  - id: serve_toss_score
+    name: Toss Score
+    scale: phase_score
+    layer: Biomechanics
+    observes:
+      - height
+      - placement
+      - rhythm
+
+  - id: serve_side_on_score
+    name: Side-On Score
+    scale: phase_score
+    layer: Biomechanics
+    observes:
+      - body_alignment
+      - shoulder_turn
+      - balance
+
+  - id: serve_trophy_score
+    name: Trophy Score
+    scale: phase_score
+    layer: Biomechanics
+    observes:
+      - arm_shape
+      - body_shape
+      - timing
+
+  - id: serve_leg_drive_score
+    name: Leg Drive Score
+    scale: phase_score
+    layer: Biomechanics
+    observes:
+      - smooth_upward_energy
+      - balance
+      - timing
+
+  - id: serve_contact_score
+    name: Contact Score
+    scale: phase_score
+    layer: Physics
+    observes:
+      - height
+      - reach
+      - consistency
+
+  - id: serve_follow_through_score
+    name: Follow-Through Score
+    scale: phase_score
+    layer: Biomechanics
+    observes:
+      - relaxed_finish
+      - safe_deceleration
+      - balance
+
+  - id: first_serve_in_20
+    name: First Serves In
+    scale: count_0_20
+    layer: Metrics
+    observes:
+      - service_box_success
+
+  - id: second_serve_in_20
+    name: Second Serves In
+    scale: count_0_20
+    layer: Metrics
+    observes:
+      - reliable_safe_serve
+
+  - id: serve_recovery_ready_count
+    name: Serve Recovery Ready Count
+    scale: count_0_20
+    layer: Skill
+    observes:
+      - racket_back_in_front
+      - eyes_on_returner
+      - balanced_next_ball_position
+
+  - id: serve_pain_score
+    name: Serve Pain Score
+    scale: pain_0_10
+    layer: Anatomy
+    observes:
+      - shoulder
+      - elbow
+      - back
+      - foot_or_heel
+
+review_rules:
+  - Choose one main correction per review.
+  - Record camera angle and evidence reference.
+  - Treat pain-limited sessions as health data before technical conclusions.
+  - Do not optimize speed before repeatability and recovery are stable.

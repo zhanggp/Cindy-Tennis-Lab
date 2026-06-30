@@ -45,6 +45,118 @@ sources:
     notes_path: private/notes/skills-of-a-tennis-athlete.md
     claims_path: knowledge/claims/motor-learning.yaml
 
+  - source_id: essential_tennis_youtube
+    title: Essential Tennis YouTube
+    creator: Essential Tennis
+    source_type: youtube
+    tier: T3
+    access: public
+    copyright_policy:
+      store_raw: false
+      public_quote_limit: short_excerpt_only
+      commit_full_text: false
+    url:
+    date_accessed:
+    language: en
+    topics:
+      - serve
+      - coaching_framework
+      - adult_learning
+    related_nodes:
+      - Skill
+      - Drill
+      - Motor Learning
+    reliability:
+      evidence_level: coaching_practice
+      confidence: medium
+      validation_needed: true
+    notes_path: research/coaching-frameworks/essential-tennis-youtube.md
+    claims_path: knowledge/claims/serve.yaml
+
+  - source_id: top_tennis_training_youtube
+    title: Top Tennis Training YouTube
+    creator: Top Tennis Training
+    source_type: youtube
+    tier: T3
+    access: public
+    copyright_policy:
+      store_raw: false
+      public_quote_limit: short_excerpt_only
+      commit_full_text: false
+    url:
+    date_accessed:
+    language: en
+    topics:
+      - serve
+      - biomechanics
+      - drill
+    related_nodes:
+      - Skill
+      - Biomechanics
+      - Drill
+    reliability:
+      evidence_level: coaching_practice
+      confidence: medium
+      validation_needed: true
+    notes_path: research/coaching-frameworks/top-tennis-training-youtube.md
+    claims_path: knowledge/claims/serve.yaml
+
+  - source_id: feel_tennis_youtube
+    title: Feel Tennis YouTube
+    creator: Feel Tennis
+    source_type: youtube
+    tier: T3
+    access: public
+    copyright_policy:
+      store_raw: false
+      public_quote_limit: short_excerpt_only
+      commit_full_text: false
+    url:
+    date_accessed:
+    language: en
+    topics:
+      - serve
+      - motor_learning
+      - feel_based_learning
+    related_nodes:
+      - Skill
+      - Motor Learning
+      - Drill
+    reliability:
+      evidence_level: coaching_practice
+      confidence: medium
+      validation_needed: true
+    notes_path: research/coaching-frameworks/feel-tennis-youtube.md
+    claims_path: knowledge/claims/serve.yaml
+
+  - source_id: intuitive_tennis_youtube
+    title: Intuitive Tennis YouTube
+    creator: Intuitive Tennis
+    source_type: youtube
+    tier: T3
+    access: public
+    copyright_policy:
+      store_raw: false
+      public_quote_limit: short_excerpt_only
+      commit_full_text: false
+    url:
+    date_accessed:
+    language: en
+    topics:
+      - serve
+      - coaching_framework
+      - match_play
+    related_nodes:
+      - Skill
+      - Drill
+      - Metrics
+    reliability:
+      evidence_level: coaching_practice
+      confidence: medium
+      validation_needed: true
+    notes_path: research/coaching-frameworks/intuitive-tennis-youtube.md
+    claims_path: knowledge/claims/serve.yaml
+
   - source_id: usta_coaching
     title: USTA Coaching
     creator: USTA

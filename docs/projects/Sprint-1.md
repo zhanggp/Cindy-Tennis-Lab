@@ -19,10 +19,11 @@ integration permissions.
 | #3 | Experiment Schema | Backlog |
 | #4 | Video Annotation | Backlog |
 | #5 | Adult Learning | Backlog |
+| #6 | Serve Ontology | Done |
 
 ## Next Candidate
 
-Serve Ontology remains the next domain-specific issue after Source Registry.
+Experiment Schema remains the next foundation issue after Serve Ontology.
 
 ## Permission Note
 

@@ -13,6 +13,8 @@
   is currently blocked.
 - Added Source Registry v0.1 so sources can become claims before becoming
   knowledge.
+- Defined Serve Ontology v0.1 as the first concrete Skill node.
+- Registered Serve-related source coverage before expanding Serve claims.
 
 ### Biggest Learning
 
@@ -21,5 +23,4 @@ become the source of truth instead of chat history.
 
 ### Next Step
 
-Review Tennis Knowledge Graph v0.1 and Source Registry v0.1, then design Serve
-Ontology v0.1.
+Review Serve Ontology v0.1, then define Experiment Schema v0.1.
