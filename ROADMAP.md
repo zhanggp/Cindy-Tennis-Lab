@@ -3,6 +3,16 @@
 This roadmap keeps Cindy Tennis Lab small enough to build and large enough to
 matter.
 
+## Project Charter v1.0
+
+The current foundation charter is
+[PROJECT-CHARTER.md](PROJECT-CHARTER.md).
+
+It defines Cindy Tennis Lab as a long-term Learning Operating System
+exploration, with tennis as the first experiment field.
+
+The next priority is Tennis Knowledge Graph v0.1.
+
 ## v0.1 Foundation
 
 - Define the mission, vision, manifesto, and why.

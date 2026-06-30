@@ -50,6 +50,7 @@ Cindy Tennis Lab.
 
 Start here:
 
+- [PROJECT-CHARTER.md](PROJECT-CHARTER.md)
 - [VISION.md](VISION.md)
 - [MANIFESTO.md](MANIFESTO.md)
 - [WHY.md](WHY.md)
