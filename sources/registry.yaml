@@ -28,7 +28,7 @@ sources:
       public_quote_limit: short_excerpt_only
       commit_full_text: false
     url:
-    date_accessed:
+    date_accessed: 2026-07-03
     language: en
     topics:
       - skill
@@ -42,7 +42,8 @@ sources:
       evidence_level: coaching_framework
       confidence: medium
       validation_needed: true
-    notes_path: private/notes/skills-of-a-tennis-athlete.md
+    notes_path: research/coaching-frameworks/skills-of-a-tennis-athlete.md
+    private_notes_path: private/notes/skills-of-a-tennis-athlete.md
     claims_path: knowledge/claims/motor-learning.yaml
 
   - source_id: essential_tennis_youtube
@@ -167,8 +168,8 @@ sources:
       store_raw: false
       public_quote_limit: short_excerpt_only
       commit_full_text: false
-    url:
-    date_accessed: 2026-06-30
+    url: https://www.ustacoaching.com/en/home.html
+    date_accessed: 2026-07-03
     language: en
     topics:
       - coaching_standard
@@ -195,8 +196,8 @@ sources:
       store_raw: false
       public_quote_limit: short_excerpt_only
       commit_full_text: false
-    url:
-    date_accessed: 2026-06-30
+    url: https://www.itftennis.com/en/growing-the-game/coaching/
+    date_accessed: 2026-07-03
     language: en
     topics:
       - coaching_standard
@@ -307,8 +308,8 @@ sources:
       store_raw: false
       public_quote_limit: short_excerpt_only
       commit_full_text: false
-    url:
-    date_accessed:
+    url: https://www.atptour.com/en/players/novak-djokovic/d643/player-stats
+    date_accessed: 2026-07-03
     language: mixed
     topics:
       - serve

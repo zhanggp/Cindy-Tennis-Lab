@@ -1,0 +1,20 @@
+claims:
+  - claim_id: claim_adult_learning_needs_personal_baseline_and_iteration
+    statement: Adult skill learning should be grounded in a personal baseline, small experiments, and repeated review rather than generic advice alone.
+    source_id: mickey_training_data
+    source_tier: T0
+    domain: Experiment
+    skill:
+    evidence_type: own_data
+    confidence: high
+    validation_needed: false
+    applicable_age: adult
+    related_nodes:
+      - Experiment
+      - Metrics
+      - Motor Learning
+    agents:
+      - Experiment Agent
+      - Coach Agent
+      - Knowledge Graph Agent
+    notes: This is an internal project operating claim; it does not prescribe a specific training plan.

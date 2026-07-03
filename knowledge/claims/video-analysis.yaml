@@ -1,0 +1,20 @@
+claims:
+  - claim_id: claim_tennis_video_understanding_is_future_research_direction
+    statement: Tennis video understanding may support future rally and tactical parsing, but it should remain a research direction until validated against Cindy Tennis Lab data.
+    source_id: tennisexpert_video_understanding
+    source_tier: T1
+    domain: Metrics
+    skill:
+    evidence_type: scientific_preprint
+    confidence: medium
+    validation_needed: true
+    applicable_age: all
+    related_nodes:
+      - Metrics
+      - Experiment
+      - Skill
+    agents:
+      - Research Agent
+      - Knowledge Graph Agent
+      - Experiment Agent
+    notes: Do not build video automation before the knowledge, data, and experiment contracts are stable.

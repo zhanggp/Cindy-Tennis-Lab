@@ -41,4 +41,5 @@ Training
 ## Files
 
 - `registry.yaml`: public source registry.
+- `agent-source-map.md`: maps virtual team roles to required source classes.
 - `private-sources.example.yaml`: example format for private sources.

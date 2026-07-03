@@ -1,0 +1,83 @@
+claims:
+  - claim_id: claim_coaching_requires_safety_and_development_context
+    statement: Coaching systems should include safety, education, and professional-development context, not only technical instruction.
+    source_id: usta_coaching
+    source_tier: T2
+    domain: Knowledge
+    skill:
+    evidence_type: official_standard
+    confidence: high
+    validation_needed: false
+    applicable_age: all
+    related_nodes:
+      - Knowledge
+      - Experiment
+      - Anatomy
+    agents:
+      - Coach Agent
+      - Product Owner Agent
+      - Rehab & Injury Prevention Agent
+    notes: Use as a governance and safety guardrail, not as a specific training plan.
+
+  - claim_id: claim_minor_athlete_workflows_need_safeguarding_boundaries
+    statement: Workflows involving minor athletes should include safeguarding boundaries, adult role clarity, and escalation paths.
+    source_id: usta_coaching
+    source_tier: T2
+    domain: Experiment
+    skill:
+    evidence_type: official_standard
+    confidence: high
+    validation_needed: false
+    applicable_age: junior
+    related_nodes:
+      - Experiment
+      - Anatomy
+      - Metrics
+    agents:
+      - Product Owner Agent
+      - Coach Agent
+      - Rehab & Injury Prevention Agent
+    notes: This supports safety baseline design and should not be used as legal advice.
+
+  - claim_id: claim_coach_education_should_connect_practice_and_sport_science
+    statement: Durable coach education should connect practical coaching with sport science, including physiology, psychology, tactics, technique, biomechanics, and drills.
+    source_id: world_tennis_itf
+    source_tier: T2
+    domain: Knowledge
+    skill:
+    evidence_type: official_standard
+    confidence: high
+    validation_needed: false
+    applicable_age: all
+    related_nodes:
+      - Knowledge
+      - Biomechanics
+      - Motor Learning
+      - Drill
+      - Skill
+    agents:
+      - Research Agent
+      - Knowledge Graph Agent
+      - Coach Agent
+      - Physical Performance Agent
+    notes: Use to keep tennis knowledge connected across domains instead of isolated by skill.
+
+  - claim_id: claim_official_systems_are_standards_context_not_local_truth
+    statement: Official coaching systems provide standards context, but local truth still requires Cindy Tennis Lab review, constraints, and experiment data.
+    source_id: world_tennis_itf
+    source_tier: T2
+    domain: Knowledge
+    skill:
+    evidence_type: official_standard
+    confidence: high
+    validation_needed: false
+    applicable_age: all
+    related_nodes:
+      - Knowledge
+      - Experiment
+      - Metrics
+    agents:
+      - Chief Architect Agent
+      - Research Agent
+      - Experiment Agent
+    notes: Prevents official references from becoming unreviewed one-size-fits-all recommendations.

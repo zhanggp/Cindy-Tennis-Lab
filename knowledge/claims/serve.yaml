@@ -47,3 +47,37 @@ claims:
       - Metrics
       - Experiment
     notes: Treat as research direction, not production-ready analysis.
+
+  - claim_id: claim_professional_cases_are_variants_not_standards
+    statement: Professional serve cases should be treated as high-level implementation variants, not standard answers for junior or adult learners.
+    source_id: djokovic_serve_case
+    source_tier: T4
+    domain: Skill
+    skill: serve
+    evidence_type: professional_case
+    confidence: medium
+    validation_needed: true
+    applicable_age: all
+    related_nodes:
+      - Skill
+      - Biomechanics
+      - Metrics
+      - Experiment
+    notes: Use elite cases to ask better questions before designing drills.
+
+  - claim_id: claim_serve_case_review_needs_metrics_before_drills
+    statement: Serve case review should map observations to metrics and principles before turning them into drills.
+    source_id: djokovic_serve_case
+    source_tier: T4
+    domain: Metrics
+    skill: serve
+    evidence_type: professional_case
+    confidence: medium
+    validation_needed: true
+    applicable_age: all
+    related_nodes:
+      - Skill
+      - Metrics
+      - Drill
+      - Experiment
+    notes: The initial metrics should include repeatability, point outcome, recovery, and safety constraints.
