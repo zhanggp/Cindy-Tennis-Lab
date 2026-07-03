@@ -1,0 +1,72 @@
+schema_version: 0.1.0
+privacy_level: public_example
+
+basic_info:
+  athlete_id: example_cindy
+  display_name: Cindy Example
+  profile_type: example
+  athlete_type: junior_learner
+  handedness: unknown
+  tennis_level: example_junior_development
+  primary_context: Junior long-term development profile example for schema testing.
+
+growth:
+  age_band: junior
+  growth_stage: unknown
+  height_cm:
+  weight_kg:
+  growth_notes: Placeholder only. Do not store real private growth data here.
+
+training_load:
+  tennis_sessions_per_week:
+  average_session_minutes:
+  matches_per_month:
+  strength_mobility_sessions_per_week:
+  rest_days_per_week:
+  recent_load_change: unknown
+
+injury_history:
+  previous_injuries: []
+  current_restrictions: []
+  professional_guidance: Example only. Store real guidance privately.
+  cleared_for_training: unknown
+
+pain_monitoring:
+  pain_scale_0_to_10:
+  pain_locations: []
+  during_training: unknown
+  after_training: unknown
+  next_morning: unknown
+  stop_rules:
+    - Stop practice and tell a parent or coach if pain appears or increases.
+    - Stop practice and seek professional input if pain is sharp or persistent.
+  escalation_rules:
+    - Use qualified medical or rehab professionals for injury concerns.
+    - Do not use this profile as diagnosis or treatment guidance.
+
+nutrition_baseline:
+  hydration_pattern: Example only.
+  pre_training_fuel: Example only.
+  post_training_recovery: Example only.
+  allergies_or_restrictions: []
+  professional_guidance: Store real medical or nutrition guidance privately.
+  notes: Placeholder only.
+
+mental_baseline:
+  motivation: Example only.
+  confidence: Example only.
+  focus: Example only.
+  competition_stress: Example only.
+  parent_or_coach_notes: Placeholder only.
+  professional_support: Store real support notes privately.
+
+goals:
+  long_term:
+    - Build long-term athletic development habits.
+    - Keep tennis growth healthy, age-appropriate, and joyful.
+  season: []
+  next_8_weeks: []
+  current_priority: Establish safe baseline inputs before training design.
+  non_goals:
+    - Do not create a training plan from this example.
+    - Do not store private medical, nutrition, or mental health details here.

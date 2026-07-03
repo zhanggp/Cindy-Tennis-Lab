@@ -1,0 +1,322 @@
+schema:
+  name: athlete-profile
+  version: 0.1.0
+  status: draft
+  date: 2026-07-03
+  purpose: >
+    Define the shared athlete profile and safety baseline input format for
+    Cindy Tennis Lab virtual team roles.
+
+principles:
+  - privacy_first
+  - safety_first
+  - age_appropriate
+  - evidence_driven
+  - professional_boundary
+  - long_term_development
+
+storage_policy:
+  public_repo_may_store:
+    - schemas
+    - example_profiles
+    - anonymized_templates
+  public_repo_must_not_store:
+    - real_medical_records
+    - private_growth_data
+    - identifiable_health_history
+    - sensitive_nutrition_notes
+    - private_mental_health_notes
+  private_paths:
+    - profiles/private/
+    - data/private/
+    - medical/
+
+required_sections:
+  - basic_info
+  - growth
+  - training_load
+  - injury_history
+  - pain_monitoring
+  - nutrition_baseline
+  - mental_baseline
+  - goals
+  - privacy_level
+
+privacy_levels:
+  public_example:
+    description: Placeholder or anonymized example data safe for the public repo.
+  internal:
+    description: Non-public operational data for family or project use.
+  private:
+    description: Identifiable personal data that must not be committed publicly.
+  medical_sensitive:
+    description: Medical, rehab, nutrition, or mental health information that
+      requires stronger privacy and professional handling.
+
+sections:
+  basic_info:
+    description: Public-safe identity and tennis context.
+    fields:
+      athlete_id:
+        type: string
+        required: true
+        public_safe: true
+      display_name:
+        type: string
+        required: true
+        public_safe: only_if_alias_or_example
+      profile_type:
+        type: enum
+        values:
+          - example
+          - real
+        required: true
+      athlete_type:
+        type: enum
+        values:
+          - adult_learner
+          - junior_learner
+          - other
+        required: true
+      handedness:
+        type: enum
+        values:
+          - right
+          - left
+          - unknown
+        required: false
+      tennis_level:
+        type: string
+        required: false
+      primary_context:
+        type: string
+        required: false
+
+  growth:
+    description: >
+      Growth and development context needed for age-appropriate decisions.
+    fields:
+      age_band:
+        type: enum
+        values:
+          - child
+          - junior
+          - adult
+          - unknown
+        required: true
+      growth_stage:
+        type: enum
+        values:
+          - pre_puberty
+          - puberty
+          - adult
+          - unknown
+        required: false
+      height_cm:
+        type: number
+        required: false
+        privacy: private
+      weight_kg:
+        type: number
+        required: false
+        privacy: private
+      growth_notes:
+        type: string
+        required: false
+        privacy: private
+
+  training_load:
+    description: Current practice exposure and workload context.
+    fields:
+      tennis_sessions_per_week:
+        type: number
+        required: false
+      average_session_minutes:
+        type: number
+        required: false
+      matches_per_month:
+        type: number
+        required: false
+      strength_mobility_sessions_per_week:
+        type: number
+        required: false
+      rest_days_per_week:
+        type: number
+        required: false
+      recent_load_change:
+        type: enum
+        values:
+          - lower
+          - stable
+          - higher
+          - unknown
+        required: false
+
+  injury_history:
+    description: Prior injuries, restrictions, and professional guidance.
+    fields:
+      previous_injuries:
+        type: list
+        required: false
+        privacy: private
+      current_restrictions:
+        type: list
+        required: false
+        privacy: private
+      professional_guidance:
+        type: string
+        required: false
+        privacy: medical_sensitive
+      cleared_for_training:
+        type: enum
+        values:
+          - yes
+          - no
+          - unknown
+          - professional_review_needed
+        required: false
+
+  pain_monitoring:
+    description: Training boundary signals, not diagnosis.
+    fields:
+      pain_scale_0_to_10:
+        type: integer
+        min: 0
+        max: 10
+        required: false
+      pain_locations:
+        type: list
+        required: false
+        privacy: private
+      during_training:
+        type: enum
+        values:
+          - none
+          - mild
+          - moderate
+          - severe
+          - unknown
+        required: false
+      after_training:
+        type: enum
+        values:
+          - none
+          - mild
+          - moderate
+          - severe
+          - unknown
+        required: false
+      next_morning:
+        type: enum
+        values:
+          - none
+          - mild
+          - moderate
+          - severe
+          - unknown
+        required: false
+      stop_rules:
+        type: list
+        required: true
+      escalation_rules:
+        type: list
+        required: true
+
+  nutrition_baseline:
+    description: General fueling and hydration context. This is not a diet plan.
+    fields:
+      hydration_pattern:
+        type: string
+        required: false
+      pre_training_fuel:
+        type: string
+        required: false
+      post_training_recovery:
+        type: string
+        required: false
+      allergies_or_restrictions:
+        type: list
+        required: false
+        privacy: medical_sensitive
+      professional_guidance:
+        type: string
+        required: false
+        privacy: medical_sensitive
+      notes:
+        type: string
+        required: false
+        privacy: private
+
+  mental_baseline:
+    description: >
+      Motivation, competition, confidence, and emotional context.
+      This is not mental health diagnosis.
+    fields:
+      motivation:
+        type: string
+        required: false
+      confidence:
+        type: string
+        required: false
+      focus:
+        type: string
+        required: false
+      competition_stress:
+        type: string
+        required: false
+      parent_or_coach_notes:
+        type: string
+        required: false
+        privacy: private
+      professional_support:
+        type: string
+        required: false
+        privacy: medical_sensitive
+
+  goals:
+    description: Long-term and near-term development direction.
+    fields:
+      long_term:
+        type: list
+        required: true
+      season:
+        type: list
+        required: false
+      next_8_weeks:
+        type: list
+        required: false
+      current_priority:
+        type: string
+        required: false
+      non_goals:
+        type: list
+        required: false
+
+  privacy_level:
+    description: Overall privacy classification for the profile.
+    type: enum
+    values:
+      - public_example
+      - internal
+      - private
+      - medical_sensitive
+    required: true
+
+boundary_rules:
+  - Real athlete profiles must live under profiles/private/ or data/private/.
+  - Medical records must live under medical/ and must not be committed.
+  - Public examples must use placeholder values only.
+  - Pain, injury, illness, eating concerns, or serious mental distress should
+    trigger human professional review.
+  - This schema does not prescribe training, nutrition, rehab, or medical care.
+
+related_agents:
+  - Product Owner Agent
+  - Research Agent
+  - Knowledge Graph Agent
+  - Experiment Agent
+  - Coach Agent
+  - Physical Performance Agent
+  - Rehab & Injury Prevention Agent
+  - Nutrition Agent
+  - Mental Skills Agent
