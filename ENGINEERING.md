@@ -49,6 +49,16 @@ Commit
 Merge
 ```
 
+## Repository Management
+
+Daily repository operating rules live in:
+
+- [docs/operations/repository-manager.md](docs/operations/repository-manager.md)
+
+Private data handling rules live in:
+
+- [docs/operations/private-records-workflow.md](docs/operations/private-records-workflow.md)
+
 ## Today Rule
 
 Do not start Agent work until the knowledge graph, data strategy, experiment

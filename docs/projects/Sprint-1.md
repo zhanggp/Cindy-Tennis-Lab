@@ -23,10 +23,11 @@ integration permissions.
 | #7 | Claim Review | Done |
 | #8 | Match Baseline | Done |
 | #9 | Serve Claim Map | Done |
+| #10 | Daily Operating Closeout | Done |
 
 ## Next Candidate
 
-Experiment Schema remains the next foundation issue after Serve Claim Map.
+Experiment Schema remains the next foundation issue after Daily Operating Closeout.
 
 ## Permission Note
 

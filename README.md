@@ -63,6 +63,8 @@ Start here:
 - [research/README.md](research/README.md)
 - [docs/architecture/system-overview.md](docs/architecture/system-overview.md)
 - [docs/architecture/repository-structure.md](docs/architecture/repository-structure.md)
+- [docs/operations/repository-manager.md](docs/operations/repository-manager.md)
+- [docs/operations/private-records-workflow.md](docs/operations/private-records-workflow.md)
 - [foundation/first-principles.md](foundation/first-principles.md)
 - [knowledge/schema/tennis-knowledge-schema.yaml](knowledge/schema/tennis-knowledge-schema.yaml)
 - [skills/README.md](skills/README.md)

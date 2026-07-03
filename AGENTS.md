@@ -48,6 +48,18 @@ In one sentence:
 4. Support agents do not replace licensed professionals.
 5. Long-term athlete development is more important than short-term performance.
 
+## Repository Manager Protocol
+
+The Engineering Lead + Repository Manager turns project thinking into durable
+repository history.
+
+Daily operating rules live in:
+
+- `docs/operations/repository-manager.md`
+
+When there is a conflict between speed and repository quality, choose repository
+quality.
+
 ## The 11-Agent Model
 
 ### 1. Product Owner Agent

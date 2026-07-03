@@ -20,6 +20,9 @@
 - Reviewed current claim seeds with Claim Review v0.1.
 - Added Match Baseline Template v0.1 for privacy-safe junior match observation.
 - Mapped reviewed Serve claims to Serve node, metrics, and experiment questions.
+- Documented Repository Manager operating protocol.
+- Documented private records workflow for real athlete data.
+- Added First Douyin Episode brief as a topic brief only.
 
 ### Biggest Learning
 
@@ -28,5 +31,5 @@ become the source of truth instead of chat history.
 
 ### Next Step
 
-Define Experiment Schema v0.1 so Serve claim candidates can become measurable
-tests.
+Define Experiment Schema v0.1 so Serve claim candidates and match baselines can
+become measurable tests.

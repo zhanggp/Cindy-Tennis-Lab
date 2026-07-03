@@ -15,3 +15,7 @@ Real match baselines should live under `data/private/` or `profiles/private/`.
 Use the public template at:
 
 - `experiments/templates/match-baseline.example.yaml`
+
+Private record workflow:
+
+- `docs/operations/private-records-workflow.md`
