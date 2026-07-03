@@ -20,10 +20,11 @@ integration permissions.
 | #4 | Video Annotation | Backlog |
 | #5 | Adult Learning | Backlog |
 | #6 | Serve Ontology | Done |
+| #7 | Claim Review | Done |
 
 ## Next Candidate
 
-Experiment Schema remains the next foundation issue after Serve Ontology.
+Experiment Schema remains the next foundation issue after Claim Review.
 
 ## Permission Note
 

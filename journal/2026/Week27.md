@@ -15,6 +15,9 @@
   knowledge.
 - Defined Serve Ontology v0.1 as the first concrete Skill node.
 - Registered Serve-related source coverage before expanding Serve claims.
+- Added Athlete Profile & Safety Baseline v0.1 as the shared data input format.
+- Added Agent-aligned source notes and claim seeds.
+- Reviewed current claim seeds with Claim Review v0.1.
 
 ### Biggest Learning
 
@@ -23,4 +26,4 @@ become the source of truth instead of chat history.
 
 ### Next Step
 
-Review Serve Ontology v0.1, then define Experiment Schema v0.1.
+Define Experiment Schema v0.1 so validated claims can become measurable tests.

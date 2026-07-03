@@ -1,0 +1,214 @@
+review:
+  name: claim-review
+  version: 0.1.0
+  status: draft
+  date: 2026-07-03
+  purpose: >
+    Review current claim seeds and decide which claims can enter Cindy Tennis
+    Lab knowledge, which claims need experiments, and which claims remain
+    research directions.
+
+scope:
+  claim_files:
+    - knowledge/claims/adult-learning.yaml
+    - knowledge/claims/coaching-standards.yaml
+    - knowledge/claims/motor-learning.yaml
+    - knowledge/claims/serve.yaml
+    - knowledge/claims/video-analysis.yaml
+  total_claims_reviewed: 14
+
+decision_counts:
+  promote_to_knowledge: 10
+  needs_experiment: 2
+  research_direction: 2
+  defer: 0
+
+promotion_rules:
+  - T0 internal project rules can be promoted when they define Cindy Tennis Lab operations.
+  - T2 official standards can be promoted as standards context or safety guardrails.
+  - T3 coaching frameworks remain claim candidates until validated.
+  - T4 professional cases can define review rules, but not direct imitation models.
+  - T1 research can define research direction before implementation.
+
+claim_reviews:
+  - claim_id: claim_adult_learning_needs_personal_baseline_and_iteration
+    source_id: mickey_training_data
+    source_tier: T0
+    decision: promote_to_knowledge
+    promotion_type: experiment_principle
+    target_nodes:
+      - Experiment
+      - Metrics
+      - Motor Learning
+    reason: >
+      This is a project operating principle for adult learning and does not
+      prescribe a specific training plan.
+    next_action: Use as a constraint when designing Mickey experiment protocols.
+
+  - claim_id: claim_coaching_requires_safety_and_development_context
+    source_id: usta_coaching
+    source_tier: T2
+    decision: promote_to_knowledge
+    promotion_type: safety_guardrail
+    target_nodes:
+      - Knowledge
+      - Experiment
+      - Anatomy
+    reason: Official coaching systems establish safety and development context.
+    next_action: Link to athlete profile and experiment safety checks.
+
+  - claim_id: claim_minor_athlete_workflows_need_safeguarding_boundaries
+    source_id: usta_coaching
+    source_tier: T2
+    decision: promote_to_knowledge
+    promotion_type: safety_guardrail
+    target_nodes:
+      - Experiment
+      - Anatomy
+      - Metrics
+    reason: Minor-athlete workflows require explicit safety boundaries.
+    next_action: Use as a required rule for Cindy data and experiment workflows.
+
+  - claim_id: claim_coach_education_should_connect_practice_and_sport_science
+    source_id: world_tennis_itf
+    source_tier: T2
+    decision: promote_to_knowledge
+    promotion_type: system_principle
+    target_nodes:
+      - Knowledge
+      - Biomechanics
+      - Motor Learning
+      - Drill
+      - Skill
+    reason: Official coaching education connects practice with sport science.
+    next_action: Use as a cross-domain rule for future knowledge graph updates.
+
+  - claim_id: claim_official_systems_are_standards_context_not_local_truth
+    source_id: world_tennis_itf
+    source_tier: T2
+    decision: promote_to_knowledge
+    promotion_type: evidence_rule
+    target_nodes:
+      - Knowledge
+      - Experiment
+      - Metrics
+    reason: Prevents official sources from becoming unreviewed universal advice.
+    next_action: Add to evidence hierarchy when Data Strategy is drafted.
+
+  - claim_id: claim_consistency_as_core_skill
+    source_id: skills_of_a_tennis_athlete
+    source_tier: T3
+    decision: needs_experiment
+    promotion_type:
+    target_nodes:
+      - Motor Learning
+      - Skill
+      - Metrics
+    reason: Plausible coaching-framework claim, but needs local validation.
+    next_action: Test through rally or serve consistency metrics before promotion.
+
+  - claim_id: claim_one_hypothesis_one_metric
+    source_id: engineering_principles
+    source_tier: T0
+    decision: promote_to_knowledge
+    promotion_type: experiment_rule
+    target_nodes:
+      - Experiment
+      - Metrics
+      - Knowledge
+    reason: Internal R&D rule that controls experiment quality.
+    next_action: Use as a required field in Experiment Schema v0.1.
+
+  - claim_id: claim_own_data_highest_value
+    source_id: project_charter_v1
+    source_tier: T0
+    decision: promote_to_knowledge
+    promotion_type: evidence_rule
+    target_nodes:
+      - Knowledge
+      - Experiment
+      - Metrics
+    reason: Own data is the project's unique evidence asset.
+    next_action: Use as a Data Strategy principle with privacy constraints.
+
+  - claim_id: claim_serve_efficiency_over_speed
+    source_id: skills_of_a_tennis_athlete
+    source_tier: T3
+    decision: needs_experiment
+    promotion_type:
+    target_nodes:
+      - Skill
+      - Metrics
+      - Experiment
+    reason: Plausible serve-development claim, but it must be validated locally.
+    next_action: Test with serve repeatability, in-rate, recovery, and point-start metrics.
+
+  - claim_id: claim_serve_is_skill_not_top_level_domain
+    source_id: rfc_0001_tennis_knowledge_graph
+    source_tier: T0
+    decision: promote_to_knowledge
+    promotion_type: architecture_rule
+    target_nodes:
+      - Knowledge
+      - Skill
+      - Drill
+      - Metrics
+    reason: Accepted knowledge graph modeling decision.
+    next_action: Keep future serve work under the Skill node.
+
+  - claim_id: claim_pose_metrics_can_support_serve_review
+    source_id: tennis_stroke_biomechanics_mediapipe_pose
+    source_tier: T1
+    decision: research_direction
+    promotion_type:
+    target_nodes:
+      - Biomechanics
+      - Metrics
+      - Experiment
+    reason: Research direction is promising, but not ready for training output.
+    next_action: Revisit after video annotation and own-video baselines exist.
+
+  - claim_id: claim_professional_cases_are_variants_not_standards
+    source_id: djokovic_serve_case
+    source_tier: T4
+    decision: promote_to_knowledge
+    promotion_type: review_rule
+    target_nodes:
+      - Skill
+      - Biomechanics
+      - Metrics
+      - Experiment
+    reason: Safe methodological rule for using professional cases.
+    next_action: Apply to Djokovic and future professional case notes.
+
+  - claim_id: claim_serve_case_review_needs_metrics_before_drills
+    source_id: djokovic_serve_case
+    source_tier: T4
+    decision: promote_to_knowledge
+    promotion_type: review_rule
+    target_nodes:
+      - Skill
+      - Metrics
+      - Drill
+      - Experiment
+    reason: Prevents jumping from elite observation directly into drills.
+    next_action: Use as the default professional case review workflow.
+
+  - claim_id: claim_tennis_video_understanding_is_future_research_direction
+    source_id: tennisexpert_video_understanding
+    source_tier: T1
+    decision: research_direction
+    promotion_type:
+    target_nodes:
+      - Metrics
+      - Experiment
+      - Skill
+    reason: Useful AI research direction, but not part of current foundation implementation.
+    next_action: Revisit only after Experiment Schema and Video Annotation protocol exist.
+
+next_review:
+  trigger: After Experiment Schema v0.1 and first serve baseline experiment exist.
+  expected_inputs:
+    - data/schemas/athlete-profile.schema.yaml
+    - knowledge/skills/serve/metrics.yaml
+    - first Mickey or Cindy baseline experiment

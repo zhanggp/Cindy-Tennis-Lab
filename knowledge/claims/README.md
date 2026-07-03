@@ -30,3 +30,10 @@ notes:
 - T3 practice frameworks need validation before becoming knowledge.
 - T0 own data is highest value, but still needs careful interpretation.
 - Knowledge is promoted only after review.
+
+## Reviews
+
+Claim review results live under `knowledge/claims/reviews/`.
+
+Review decisions decide whether a claim should be promoted to knowledge, tested
+through an experiment, kept as a research direction, or deferred.
