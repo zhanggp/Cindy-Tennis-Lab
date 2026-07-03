@@ -1,0 +1,132 @@
+schema:
+  name: serve-claim-map
+  version: 0.1.0
+  status: draft
+  date: 2026-07-03
+  purpose: >
+    Map reviewed serve claims to the Serve skill node, observable metrics, and
+    next experiment questions without creating a training plan.
+
+inputs:
+  claims_file: knowledge/claims/serve.yaml
+  review_file: knowledge/claims/reviews/claim-review-v0.1.yaml
+  metrics_file: knowledge/skills/serve/metrics.yaml
+  skill_node: knowledge/skills/serve/README.md
+
+serve_node:
+  graph_node: Skill
+  skill_id: serve
+  linked_nodes:
+    - Physics
+    - Biomechanics
+    - Anatomy
+    - Motor Learning
+    - Drill
+    - Metrics
+    - Experiment
+
+claim_map:
+  - claim_id: claim_serve_efficiency_over_speed
+    review_decision: needs_experiment
+    source_tier: T3
+    knowledge_status: candidate
+    node_mapping:
+      primary_node: Skill
+      secondary_nodes:
+        - Metrics
+        - Experiment
+    metric_refs:
+      - first_serve_in_20
+      - second_serve_in_20
+      - serve_recovery_ready_count
+      - serve_toss_score
+      - serve_pain_score
+    experiment_question: >
+      Does prioritizing repeatability, recovery, and safe rhythm produce a
+      better serve baseline than judging serve quality by speed?
+    boundary: >
+      This claim comes from a T3 coaching framework and must not become training
+      knowledge until tested with Cindy Tennis Lab data.
+
+  - claim_id: claim_serve_is_skill_not_top_level_domain
+    review_decision: promote_to_knowledge
+    source_tier: T0
+    knowledge_status: promoted_architecture_rule
+    node_mapping:
+      primary_node: Skill
+      secondary_nodes:
+        - Knowledge
+        - Drill
+        - Metrics
+    metric_refs: []
+    experiment_question:
+    boundary: >
+      Future serve work stays under the Skill node unless a later RFC changes
+      the knowledge graph structure.
+
+  - claim_id: claim_pose_metrics_can_support_serve_review
+    review_decision: research_direction
+    source_tier: T1
+    knowledge_status: research_only
+    node_mapping:
+      primary_node: Biomechanics
+      secondary_nodes:
+        - Metrics
+        - Experiment
+    metric_refs:
+      - serve_toss_score
+      - serve_side_on_score
+      - serve_contact_score
+      - serve_follow_through_score
+    experiment_question: >
+      Can future pose-based metrics support serve review after human-labeled
+      video baselines exist?
+    boundary: >
+      Do not build video automation or use pose metrics for coaching output
+      before video annotation and validation protocols exist.
+
+  - claim_id: claim_professional_cases_are_variants_not_standards
+    review_decision: promote_to_knowledge
+    source_tier: T4
+    knowledge_status: promoted_review_rule
+    node_mapping:
+      primary_node: Skill
+      secondary_nodes:
+        - Biomechanics
+        - Metrics
+        - Experiment
+    metric_refs:
+      - serve_toss_score
+      - serve_contact_score
+      - serve_recovery_ready_count
+    experiment_question:
+    boundary: >
+      Djokovic and other professional cases are high-level variants, not
+      standard answers for junior or adult learners.
+
+  - claim_id: claim_serve_case_review_needs_metrics_before_drills
+    review_decision: promote_to_knowledge
+    source_tier: T4
+    knowledge_status: promoted_review_rule
+    node_mapping:
+      primary_node: Metrics
+      secondary_nodes:
+        - Skill
+        - Drill
+        - Experiment
+    metric_refs:
+      - first_serve_in_20
+      - second_serve_in_20
+      - serve_recovery_ready_count
+      - serve_pain_score
+    experiment_question:
+    boundary: >
+      Professional case observations must be mapped to metrics and principles
+      before any drill is proposed.
+
+next_steps:
+  p0_done_when:
+    - All serve claims have a Serve node mapping.
+    - All metric references exist in serve metrics.
+    - Claims that need validation are kept as experiment candidates.
+  next_p0_candidate: Experiment Schema v0.1

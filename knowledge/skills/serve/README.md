@@ -35,11 +35,14 @@ The first goal is a stable action model:
 - [drills.md](drills.md): Drill categories, not full training plans.
 - [metrics.yaml](metrics.yaml): Review metrics and scales.
 - [sources.md](sources.md): Registered source coverage for Serve claims.
+- [claim-map.yaml](claim-map.yaml): Reviewed claims mapped to nodes, metrics,
+  and experiment questions.
 
 ## Related Records
 
 - `knowledge/schema/tennis-knowledge-graph-v0.1.yaml`
 - `knowledge/claims/serve.yaml`
+- `knowledge/claims/reviews/claim-review-v0.1.yaml`
 - `knowledge/ontology/serve-ontology.md`
 - `labs/serve-lab/serve-scoring-rubric.md`
 - `programs/cindy-ncaa-pathway/serve-development-plan.md`

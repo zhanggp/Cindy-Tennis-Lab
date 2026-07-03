@@ -22,10 +22,11 @@ integration permissions.
 | #6 | Serve Ontology | Done |
 | #7 | Claim Review | Done |
 | #8 | Match Baseline | Done |
+| #9 | Serve Claim Map | Done |
 
 ## Next Candidate
 
-Experiment Schema remains the next foundation issue after Match Baseline.
+Experiment Schema remains the next foundation issue after Serve Claim Map.
 
 ## Permission Note
 

@@ -19,6 +19,7 @@
 - Added Agent-aligned source notes and claim seeds.
 - Reviewed current claim seeds with Claim Review v0.1.
 - Added Match Baseline Template v0.1 for privacy-safe junior match observation.
+- Mapped reviewed Serve claims to Serve node, metrics, and experiment questions.
 
 ### Biggest Learning
 
@@ -27,5 +28,5 @@ become the source of truth instead of chat history.
 
 ### Next Step
 
-Use the match baseline template for the next private Cindy match record, then
-define Experiment Schema v0.1.
+Define Experiment Schema v0.1 so Serve claim candidates can become measurable
+tests.
