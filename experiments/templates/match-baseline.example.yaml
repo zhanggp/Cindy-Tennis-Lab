@@ -1,0 +1,65 @@
+schema_version: 0.1.0
+privacy_level: public_example
+
+metadata:
+  baseline_id: example_u10_match_baseline
+  schema_version: 0.1.0
+  athlete_profile_ref: profiles/examples/cindy.example.yaml
+  profile_type: example
+  age_division: U10 example
+  event_date:
+  event_location:
+  opponent_names: []
+  match_format: Example only.
+
+pre_match_context:
+  recent_training_load: Example only.
+  sleep_readiness: unknown
+  energy_readiness: unknown
+  pre_match_goal: Compete with calm effort and learn from the experience.
+  non_goals:
+    - Do not make major technical changes right before the match.
+    - Do not judge development from one match result.
+    - Do not turn the match into a parent coaching session.
+
+coach_calibration:
+  session_timing: Example only. Store exact schedule privately.
+  coach_focus:
+    - Serve rhythm.
+    - Return ready position.
+    - First three balls.
+  single_match_cue: One simple cue from coach goes here.
+  should_not_change:
+    - Do not rebuild stroke mechanics before competition.
+    - Do not introduce multiple new cues.
+
+observation_metrics:
+  serve:
+    first_serve_in_count:
+    double_fault_count:
+    serve_rhythm_score_1_to_5:
+    serve_recovery_ready_count:
+  return:
+    ready_position_score_1_to_5:
+    return_in_play_count:
+  first_three_balls:
+    rally_started_count:
+    early_unforced_error_count:
+  mental_skills:
+    reset_after_lost_point_score_1_to_5:
+    body_language_score_1_to_5:
+    enjoyment_score_1_to_5:
+
+safety_check:
+  pain_scale_0_to_10:
+  unusual_fatigue: unknown
+  stop_or_escalate: unknown
+  notes: Placeholder only. Store real safety details privately.
+
+post_match_reflection:
+  what_went_well:
+    - Example positive observation.
+  one_learning: Example learning from the match.
+  one_next_question: Example question for the next practice or coach discussion.
+  parent_note: Placeholder only. Store real notes privately.
+  coach_note: Placeholder only. Store real notes privately.

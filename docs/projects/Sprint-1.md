@@ -21,10 +21,11 @@ integration permissions.
 | #5 | Adult Learning | Backlog |
 | #6 | Serve Ontology | Done |
 | #7 | Claim Review | Done |
+| #8 | Match Baseline | Done |
 
 ## Next Candidate
 
-Experiment Schema remains the next foundation issue after Claim Review.
+Experiment Schema remains the next foundation issue after Match Baseline.
 
 ## Permission Note
 

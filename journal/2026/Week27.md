@@ -18,6 +18,7 @@
 - Added Athlete Profile & Safety Baseline v0.1 as the shared data input format.
 - Added Agent-aligned source notes and claim seeds.
 - Reviewed current claim seeds with Claim Review v0.1.
+- Added Match Baseline Template v0.1 for privacy-safe junior match observation.
 
 ### Biggest Learning
 
@@ -26,4 +27,5 @@ become the source of truth instead of chat history.
 
 ### Next Step
 
-Define Experiment Schema v0.1 so validated claims can become measurable tests.
+Use the match baseline template for the next private Cindy match record, then
+define Experiment Schema v0.1.

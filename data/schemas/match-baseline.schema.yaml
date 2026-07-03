@@ -1,0 +1,229 @@
+schema:
+  name: match-baseline
+  version: 0.1.0
+  status: draft
+  date: 2026-07-03
+  purpose: >
+    Define a privacy-safe baseline template for observing a junior match without
+    turning the match into a training plan or publishing private event details.
+
+principles:
+  - privacy_first
+  - child_first
+  - observe_before_judging
+  - one_cue_only
+  - safety_first
+  - joy_matters
+
+storage_policy:
+  public_repo_may_store:
+    - schema
+    - anonymized_templates
+    - public_safe_examples
+  public_repo_must_not_store:
+    - real_minor_event_schedule
+    - exact_match_location
+    - opponent_names
+    - private_coach_notes
+    - medical_or_pain_details
+    - identifiable_video_links
+  private_paths:
+    - data/private/
+    - profiles/private/
+    - medical/
+
+required_sections:
+  - metadata
+  - pre_match_context
+  - coach_calibration
+  - observation_metrics
+  - safety_check
+  - post_match_reflection
+  - privacy_level
+
+sections:
+  metadata:
+    description: Public-safe event context.
+    fields:
+      baseline_id:
+        type: string
+        required: true
+      schema_version:
+        type: string
+        required: true
+      athlete_profile_ref:
+        type: string
+        required: true
+      profile_type:
+        type: enum
+        values:
+          - example
+          - real
+        required: true
+      age_division:
+        type: string
+        required: false
+        privacy: public_if_generic
+      event_date:
+        type: string
+        required: false
+        privacy: private
+      event_location:
+        type: string
+        required: false
+        privacy: private
+      opponent_names:
+        type: list
+        required: false
+        privacy: private
+      match_format:
+        type: string
+        required: false
+
+  pre_match_context:
+    description: Baseline context before the match.
+    fields:
+      recent_training_load:
+        type: string
+        required: false
+      sleep_readiness:
+        type: enum
+        values:
+          - low
+          - normal
+          - good
+          - unknown
+        required: false
+      energy_readiness:
+        type: enum
+        values:
+          - low
+          - normal
+          - good
+          - unknown
+        required: false
+      pre_match_goal:
+        type: string
+        required: true
+      non_goals:
+        type: list
+        required: true
+
+  coach_calibration:
+    description: Notes from the final coach session before competition.
+    fields:
+      session_timing:
+        type: string
+        required: false
+        privacy: private_if_exact
+      coach_focus:
+        type: list
+        required: false
+      single_match_cue:
+        type: string
+        required: true
+      should_not_change:
+        type: list
+        required: true
+
+  observation_metrics:
+    description: Small set of match observations.
+    fields:
+      serve:
+        type: object
+        required: true
+        suggested_fields:
+          - first_serve_in_count
+          - double_fault_count
+          - serve_rhythm_score_1_to_5
+          - serve_recovery_ready_count
+      return:
+        type: object
+        required: true
+        suggested_fields:
+          - ready_position_score_1_to_5
+          - return_in_play_count
+      first_three_balls:
+        type: object
+        required: true
+        suggested_fields:
+          - rally_started_count
+          - early_unforced_error_count
+      mental_skills:
+        type: object
+        required: true
+        suggested_fields:
+          - reset_after_lost_point_score_1_to_5
+          - body_language_score_1_to_5
+          - enjoyment_score_1_to_5
+
+  safety_check:
+    description: Boundary signals only. This is not medical diagnosis.
+    fields:
+      pain_scale_0_to_10:
+        type: integer
+        min: 0
+        max: 10
+        required: false
+        privacy: private
+      unusual_fatigue:
+        type: enum
+        values:
+          - yes
+          - no
+          - unknown
+        required: false
+      stop_or_escalate:
+        type: enum
+        values:
+          - yes
+          - no
+          - unknown
+        required: true
+      notes:
+        type: string
+        required: false
+        privacy: private
+
+  post_match_reflection:
+    description: Short reflection after the match.
+    fields:
+      what_went_well:
+        type: list
+        required: true
+      one_learning:
+        type: string
+        required: true
+      one_next_question:
+        type: string
+        required: false
+      parent_note:
+        type: string
+        required: false
+        privacy: private
+      coach_note:
+        type: string
+        required: false
+        privacy: private
+
+  privacy_level:
+    description: Overall privacy classification.
+    type: enum
+    values:
+      - public_example
+      - internal
+      - private
+      - medical_sensitive
+    required: true
+
+boundary_rules:
+  - Public examples must not include real event dates, locations, opponents, or private coach notes.
+  - A junior match baseline is for observation, not pressure.
+  - Use one match cue only.
+  - Do not write a training plan from a single match.
+  - Pain, illness, or unusual fatigue should trigger adult review and professional help when needed.
+
+related_files:
+  - data/schemas/athlete-profile.schema.yaml
+  - knowledge/skills/serve/metrics.yaml
+  - knowledge/claims/reviews/claim-review-v0.1.yaml
