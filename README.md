@@ -67,5 +67,6 @@ Start here:
 - [docs/operations/private-records-workflow.md](docs/operations/private-records-workflow.md)
 - [foundation/first-principles.md](foundation/first-principles.md)
 - [knowledge/schema/tennis-knowledge-schema.yaml](knowledge/schema/tennis-knowledge-schema.yaml)
+- [data/schemas/experiment.schema.yaml](data/schemas/experiment.schema.yaml)
 - [skills/README.md](skills/README.md)
 - [harness/README.md](harness/README.md)

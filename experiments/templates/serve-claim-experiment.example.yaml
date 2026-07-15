@@ -1,0 +1,110 @@
+schema_version: 0.1.0
+privacy_level: public_example
+
+metadata:
+  experiment_id: example_serve_efficiency_baseline
+  schema_version: 0.1.0
+  profile_type: example
+  athlete_profile_ref: profiles/examples/cindy.example.yaml
+  experiment_type: claim_validation
+  status: draft
+  date_range:
+    start:
+    end:
+
+research_linkage:
+  claim_id: claim_serve_efficiency_over_speed
+  claim_review_ref: knowledge/claims/reviews/claim-review-v0.1.yaml
+  claim_map_ref: knowledge/skills/serve/claim-map.yaml
+  source_id: skills_of_a_tennis_athlete
+  source_tier: T3
+  knowledge_node: Skill
+  related_nodes:
+    - Metrics
+    - Experiment
+
+question: >
+  Does prioritizing serve repeatability, recovery, and safe rhythm provide a
+  better baseline signal than judging serve quality by speed?
+
+hypothesis:
+  statement: >
+    A serve review focused on repeatability, recovery, and safety will produce a
+    more useful baseline than a speed-first review.
+  expected_direction: Better baseline quality without speed optimization.
+  validation_needed: true
+
+intervention:
+  intervention_type: observation_focus
+  description: >
+    Observe serve repeatability, recovery readiness, and safety boundary signals
+    without changing technique or prescribing a training plan.
+  duration: Example only.
+  non_goals:
+    - Do not optimize serve speed.
+    - Do not rebuild serve mechanics.
+    - Do not create a training plan from this example.
+    - Do not use this example as coaching advice.
+
+metrics:
+  primary_metric: first_serve_in_20
+  supporting_metrics:
+    - second_serve_in_20
+    - serve_recovery_ready_count
+    - serve_toss_score
+    - serve_pain_score
+  metric_refs:
+    - knowledge/skills/serve/metrics.yaml
+  success_signal: Example only. Define privately before running a real experiment.
+  failure_signal: Example only. Define privately before running a real experiment.
+
+evidence_plan:
+  evidence_types:
+    - count
+    - observation_note
+    - optional_private_video_reference
+  capture_notes: Public example only. Store real evidence privately.
+  public_outputs_allowed:
+    - anonymized_summary
+    - schema_improvement_note
+  private_outputs:
+    - data/private/
+    - profiles/private/
+
+safety_and_privacy:
+  privacy_level: public_example
+  minor_data: true
+  pain_monitoring_required: true
+  professional_review_required: false
+  private_paths:
+    - data/private/
+    - profiles/private/
+    - medical/
+
+stop_conditions:
+  - Pain appears or increases.
+  - Unusual fatigue appears.
+  - The learner becomes distressed or pressured.
+  - The experiment starts turning into a training plan.
+
+review_plan:
+  review_after: Example only.
+  reviewer_roles:
+    - Parent
+    - Coach if available
+    - Experiment Agent
+  review_questions:
+    - Did the primary metric answer the question?
+    - Did the observation stay child-first and pressure-free?
+    - Should the claim remain a candidate, be revised, or be promoted?
+
+results:
+  primary_metric_result:
+  supporting_metric_results: []
+  qualitative_notes:
+  evidence_refs: []
+
+review_decision:
+  decision: not_reviewed
+  rationale:
+  promoted_knowledge_ref:

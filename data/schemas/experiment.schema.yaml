@@ -1,0 +1,306 @@
+schema:
+  name: experiment
+  version: 0.1.0
+  status: draft
+  date: 2026-07-15
+  purpose: >
+    Define the standard experiment record for turning reviewed claims into
+    measurable, privacy-safe learning tests.
+
+principles:
+  - one_hypothesis
+  - one_primary_metric
+  - safety_first
+  - privacy_first
+  - evidence_before_conclusion
+  - review_before_promotion
+  - no_training_plan_by_default
+
+storage_policy:
+  public_repo_may_store:
+    - schemas
+    - anonymized_templates
+    - public_safe_examples
+  public_repo_must_not_store:
+    - real_minor_event_schedule
+    - exact_locations
+    - opponent_names
+    - private_coach_notes
+    - identifiable_video_links
+    - raw_private_video
+    - medical_details
+    - sensitive_personal_notes
+  private_paths:
+    - data/private/
+    - profiles/private/
+    - medical/
+
+required_sections:
+  - metadata
+  - research_linkage
+  - question
+  - hypothesis
+  - intervention
+  - metrics
+  - evidence_plan
+  - safety_and_privacy
+  - stop_conditions
+  - review_plan
+  - results
+  - review_decision
+  - privacy_level
+
+sections:
+  metadata:
+    description: Public-safe experiment identity and scope.
+    fields:
+      experiment_id:
+        type: string
+        required: true
+      schema_version:
+        type: string
+        required: true
+      profile_type:
+        type: enum
+        values:
+          - example
+          - real
+        required: true
+      athlete_profile_ref:
+        type: string
+        required: true
+      experiment_type:
+        type: enum
+        values:
+          - claim_validation
+          - baseline
+          - retention_check
+          - transfer_check
+          - safety_review
+        required: true
+      status:
+        type: enum
+        values:
+          - draft
+          - ready
+          - running
+          - completed
+          - stopped
+          - reviewed
+        required: true
+      date_range:
+        type: object
+        required: false
+        privacy: private_if_real
+
+  research_linkage:
+    description: Links the experiment to reviewed claims and knowledge nodes.
+    fields:
+      claim_id:
+        type: string
+        required: true
+      claim_review_ref:
+        type: string
+        required: true
+      claim_map_ref:
+        type: string
+        required: false
+      source_id:
+        type: string
+        required: false
+      source_tier:
+        type: enum
+        values:
+          - T0
+          - T1
+          - T2
+          - T3
+          - T4
+          - T5
+        required: false
+      knowledge_node:
+        type: string
+        required: true
+      related_nodes:
+        type: list
+        required: false
+
+  question:
+    description: The single question this experiment asks.
+    type: string
+    required: true
+
+  hypothesis:
+    description: The single hypothesis being tested.
+    fields:
+      statement:
+        type: string
+        required: true
+      expected_direction:
+        type: string
+        required: false
+      validation_needed:
+        type: boolean
+        required: true
+
+  intervention:
+    description: The smallest change being tested. This is not a full training plan.
+    fields:
+      intervention_type:
+        type: enum
+        values:
+          - cue
+          - observation_focus
+          - drill_constraint
+          - review_method
+          - baseline_only
+        required: true
+      description:
+        type: string
+        required: true
+      duration:
+        type: string
+        required: false
+      non_goals:
+        type: list
+        required: true
+
+  metrics:
+    description: One primary metric and optional supporting metrics.
+    fields:
+      primary_metric:
+        type: string
+        required: true
+      supporting_metrics:
+        type: list
+        required: false
+      metric_refs:
+        type: list
+        required: true
+      success_signal:
+        type: string
+        required: false
+      failure_signal:
+        type: string
+        required: false
+
+  evidence_plan:
+    description: What evidence will be captured and where it should live.
+    fields:
+      evidence_types:
+        type: list
+        required: true
+      capture_notes:
+        type: string
+        required: false
+      public_outputs_allowed:
+        type: list
+        required: false
+      private_outputs:
+        type: list
+        required: true
+
+  safety_and_privacy:
+    description: Safety and privacy boundary rules.
+    fields:
+      privacy_level:
+        type: enum
+        values:
+          - public_example
+          - internal
+          - private
+          - medical_sensitive
+        required: true
+      minor_data:
+        type: boolean
+        required: true
+      pain_monitoring_required:
+        type: boolean
+        required: true
+      professional_review_required:
+        type: boolean
+        required: false
+      private_paths:
+        type: list
+        required: true
+
+  stop_conditions:
+    description: Conditions that stop the experiment before review.
+    type: list
+    required: true
+
+  review_plan:
+    description: Defines when and how the experiment is reviewed.
+    fields:
+      review_after:
+        type: string
+        required: true
+      reviewer_roles:
+        type: list
+        required: true
+      review_questions:
+        type: list
+        required: true
+
+  results:
+    description: Results stay empty for examples and drafts.
+    fields:
+      primary_metric_result:
+        type: string
+        required: false
+      supporting_metric_results:
+        type: list
+        required: false
+      qualitative_notes:
+        type: string
+        required: false
+        privacy: private_if_real
+      evidence_refs:
+        type: list
+        required: false
+        privacy: private_if_real
+
+  review_decision:
+    description: Final decision after evidence review.
+    fields:
+      decision:
+        type: enum
+        values:
+          - not_reviewed
+          - continue
+          - revise
+          - stop
+          - promote_to_knowledge
+          - reject_claim
+        required: true
+      rationale:
+        type: string
+        required: false
+      promoted_knowledge_ref:
+        type: string
+        required: false
+
+  privacy_level:
+    description: Overall privacy classification for the experiment record.
+    type: enum
+    values:
+      - public_example
+      - internal
+      - private
+      - medical_sensitive
+    required: true
+
+boundary_rules:
+  - An experiment must test one hypothesis with one primary metric.
+  - A schema or template is not a training plan.
+  - Public examples must use placeholder values only.
+  - Real minor-athlete experiment data must live in private paths.
+  - Pain, injury, illness, or unusual fatigue stops technical interpretation.
+  - A claim is promoted to knowledge only after review.
+
+related_files:
+  - knowledge/claims/reviews/claim-review-v0.1.yaml
+  - knowledge/skills/serve/claim-map.yaml
+  - knowledge/skills/serve/metrics.yaml
+  - data/schemas/athlete-profile.schema.yaml
+  - data/schemas/match-baseline.schema.yaml

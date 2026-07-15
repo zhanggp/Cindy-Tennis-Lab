@@ -16,7 +16,7 @@ integration permissions.
 | --- | --- | --- |
 | #1 | Knowledge Graph | Done |
 | #2 | Source Registry | Done |
-| #3 | Experiment Schema | Backlog |
+| #3 | Experiment Schema | Done |
 | #4 | Video Annotation | Backlog |
 | #5 | Adult Learning | Backlog |
 | #6 | Serve Ontology | Done |
@@ -27,7 +27,7 @@ integration permissions.
 
 ## Next Candidate
 
-Experiment Schema remains the next foundation issue after Daily Operating Closeout.
+Video Annotation remains the next foundation issue after Experiment Schema.
 
 ## Permission Note
 
@@ -38,5 +38,5 @@ GitHub API error 403: Resource not accessible by integration
 ```
 
 When repository issue/project write access is available, create the GitHub
-Project as `Sprint 1` with the columns above, then create or sync the five
-issues from `docs/issues/`.
+Project as `Sprint 1` with the columns above, then create or sync the local
+issue drafts from `docs/issues/`.
