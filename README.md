@@ -68,5 +68,7 @@ Start here:
 - [foundation/first-principles.md](foundation/first-principles.md)
 - [knowledge/schema/tennis-knowledge-schema.yaml](knowledge/schema/tennis-knowledge-schema.yaml)
 - [data/schemas/experiment.schema.yaml](data/schemas/experiment.schema.yaml)
+- [data/schemas/video-annotation.schema.yaml](data/schemas/video-annotation.schema.yaml)
+- [experiments/templates/video-annotation.example.yaml](experiments/templates/video-annotation.example.yaml)
 - [skills/README.md](skills/README.md)
 - [harness/README.md](harness/README.md)

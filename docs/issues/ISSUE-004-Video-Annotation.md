@@ -1,5 +1,7 @@
 # Issue #004: Video Annotation
 
+Status: Done
+
 ## Why
 
 Video is a primary evidence source. The project needs a simple annotation model
@@ -27,3 +29,11 @@ This issue does not include computer vision, automatic detection, or UI.
 - Annotation template is reviewed against `labs/video-analysis-lab/`.
 - Annotation records can link to evidence IDs.
 - Limitations and camera-angle quality are represented.
+
+## Delivered
+
+- `data/schemas/video-annotation.schema.yaml`
+- `experiments/templates/video-annotation.example.yaml`
+- `labs/video-analysis-lab/annotation-template.md`
+- Good-Tennis adapter contract and public fixture are maintained in the
+  Good-Tennis checkout.

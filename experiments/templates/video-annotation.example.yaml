@@ -1,0 +1,66 @@
+schema_version: 0.1.0
+privacy_level: public_example
+
+metadata:
+  annotation_id: good_tennis_demo_001_frame_00000001
+  schema_version: 0.1.0
+  profile_type: example
+  athlete_profile_ref: profiles/examples/cindy.example.yaml
+  source_id: good-tennis-demo-001
+  knowledge_refs: []
+  experiment_ref:
+
+media:
+  source_ref: demo-video-analysis
+  source_kind: analysis_jsonl
+  frame_index: 1
+  time_sec: 0.0
+  frame_scope: frame
+  camera_angle: unknown
+
+annotation:
+  observation_type: machine_detection
+  label: player_and_ball_frame_observation
+  payload:
+    players:
+      upper:
+        image: [100.0, 200.0]
+        court: [2.1, 8.0]
+        speed: 0.5
+        track_id: 7
+        hands:
+          left:
+          right: [110.0, 190.0]
+      lower:
+        image: [400.0, 600.0]
+        court: [8.2, 18.0]
+        speed: 0.3
+        track_id: 9
+        hands:
+          left:
+          right:
+    tennis_ball:
+      image: [300.0, 220.0]
+      court: [5.0, 12.0]
+    bounce:
+  confidence: unknown
+  evidence_level: raw_observation
+  next_question: What human-reviewed observation should be checked next?
+
+provenance:
+  producer: Good-Tennis
+  source_schema_version: "1.0"
+  source_record_ref: detections.jsonl#frame=1
+  transformation: Field-preserving conversion from Good-Tennis JSONL observation.
+
+quality:
+  camera_angle_quality: unknown
+  missing_fields:
+    - camera calibration metadata
+    - human review
+  limitations:
+    - This public example contains no real athlete or event identifiers.
+    - Machine detections are not validated coaching claims.
+
+review:
+  status: unreviewed

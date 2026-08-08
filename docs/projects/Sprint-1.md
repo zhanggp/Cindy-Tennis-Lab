@@ -17,7 +17,7 @@ integration permissions.
 | #1 | Knowledge Graph | Done |
 | #2 | Source Registry | Done |
 | #3 | Experiment Schema | Done |
-| #4 | Video Annotation | Backlog |
+| #4 | Video Annotation | Done |
 | #5 | Adult Learning | Backlog |
 | #6 | Serve Ontology | Done |
 | #7 | Claim Review | Done |
@@ -27,7 +27,8 @@ integration permissions.
 
 ## Next Candidate
 
-Video Annotation remains the next foundation issue after Experiment Schema.
+Good-Tennis adapter integration is the next foundation issue after Video
+Annotation.
 
 ## Permission Note
 

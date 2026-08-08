@@ -1,0 +1,235 @@
+schema:
+  name: video-annotation
+  version: 0.1.0
+  status: draft
+  date: 2026-08-08
+  purpose: >
+    Define a privacy-safe record for linking video evidence to observations,
+    claims, experiments, and future human review.
+
+principles:
+  - observe_before_interpreting
+  - evidence_before_conclusion
+  - human_review_before_promotion
+  - privacy_first
+  - no_training_plan_by_default
+
+storage_policy:
+  public_repo_may_store:
+    - schema
+    - anonymized_templates
+    - public_safe_examples
+    - derived_machine_observations_without_identifiers
+  public_repo_must_not_store:
+    - identifiable_video_links
+    - raw_private_video
+    - real_minor_event_details
+    - exact_locations
+    - private_coach_notes
+    - medical_or_pain_details
+  private_paths:
+    - data/private/
+    - profiles/private/
+    - medical/
+    - videos/
+
+required_sections:
+  - metadata
+  - media
+  - annotation
+  - provenance
+  - quality
+  - review
+  - privacy_level
+
+sections:
+  metadata:
+    description: Public-safe identity and linkage fields.
+    fields:
+      annotation_id:
+        type: string
+        required: true
+      schema_version:
+        type: string
+        required: true
+      profile_type:
+        type: enum
+        values:
+          - example
+          - real
+        required: true
+      athlete_profile_ref:
+        type: string
+        required: false
+        privacy: private_if_real
+      source_id:
+        type: string
+        required: true
+      knowledge_refs:
+        type: list
+        required: false
+      experiment_ref:
+        type: string
+        required: false
+
+  media:
+    description: Evidence location and capture context.
+    fields:
+      source_ref:
+        type: string
+        required: true
+        privacy: private_if_real
+      source_kind:
+        type: enum
+        values:
+          - raw_video
+          - derived_clip
+          - analysis_jsonl
+        required: true
+      frame_index:
+        type: integer
+        required: false
+        min: 0
+      time_sec:
+        type: number
+        required: false
+        min: 0
+      frame_scope:
+        type: enum
+        values:
+          - frame
+          - range
+          - unknown
+        required: true
+      clip_start_sec:
+        type: number
+        required: false
+        privacy: private_if_real
+      clip_end_sec:
+        type: number
+        required: false
+        privacy: private_if_real
+      camera_angle:
+        type: enum
+        values:
+          - front
+          - side
+          - rear
+          - unknown
+        required: true
+
+  annotation:
+    description: The observation, separated from interpretation or advice.
+    fields:
+      observation_type:
+        type: enum
+        values:
+          - machine_detection
+          - human_observation
+          - mixed
+        required: true
+      label:
+        type: string
+        required: true
+      payload:
+        type: object
+        required: true
+      confidence:
+        type: enum
+        values:
+          - high
+          - medium
+          - low
+          - unknown
+        required: true
+      evidence_level:
+        type: enum
+        values:
+          - raw_observation
+          - reviewed_observation
+          - validated_claim
+        required: true
+      next_question:
+        type: string
+        required: false
+
+  provenance:
+    description: How the annotation was produced and where it came from.
+    fields:
+      producer:
+        type: string
+        required: true
+      source_schema_version:
+        type: string
+        required: true
+      source_record_ref:
+        type: string
+        required: true
+      transformation:
+        type: string
+        required: true
+      generated_at:
+        type: string
+        required: false
+        privacy: private_if_real
+
+  quality:
+    description: Capture limitations and missing evidence.
+    fields:
+      camera_angle_quality:
+        type: enum
+        values:
+          - good
+          - limited
+          - unknown
+        required: true
+      missing_fields:
+        type: list
+        required: true
+      limitations:
+        type: list
+        required: true
+
+  review:
+    description: Human review state; machine output is never promoted automatically.
+    fields:
+      status:
+        type: enum
+        values:
+          - unreviewed
+          - human_reviewed
+          - rejected
+        required: true
+      reviewer_role:
+        type: string
+        required: false
+      reviewed_at:
+        type: string
+        required: false
+        privacy: private_if_real
+      review_note:
+        type: string
+        required: false
+        privacy: private_if_real
+
+  privacy_level:
+    description: Overall privacy classification for the record.
+    type: enum
+    values:
+      - public_example
+      - internal
+      - private
+      - medical_sensitive
+    required: true
+
+boundary_rules:
+  - A machine detection is an observation, not a coaching conclusion.
+  - Human review is required before an observation becomes a claim or experiment input.
+  - Public examples use placeholder IDs and derived observations only.
+  - Do not infer stroke quality, injury status, or training advice from this record.
+  - Missing camera context must be represented as a limitation, not silently filled.
+
+related_files:
+  - data/schemas/experiment.schema.yaml
+  - data/schemas/athlete-profile.schema.yaml
+  - labs/video-analysis-lab/annotation-template.md
